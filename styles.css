@@ -1,0 +1,88 @@
+body {
+    font-family: "Arial", Times, serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('mustang.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    animation: fadeIn 2s ease-in-out; 
+    backdrop-filter: blur(10px);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.auth-container {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+    backdrop-filter: blur(5px); 
+    opacity: 0; 
+    animation: slideIn 1s ease-in-out forwards; 
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.auth-container h2 {
+    margin-bottom: 19px;
+}
+
+.auth-container input[type="text"],
+.auth-container input[type="password"] {
+    width: 92%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.auth-container button.auth-button {
+    width: 100% !important;
+    padding: 10px !important;
+    background-color: #1b87a2 !important;
+    border: none !important;
+    border-radius: 5px !important;
+    color: rgb(0, 0, 0) !important;
+    font-size: 16px !important;
+    cursor: pointer !important;
+    margin-top: 10px !important;
+    display: block !important;
+    text-align: center !important;
+}
+
+.auth-container button.auth-button:hover {
+    background-color: #069ac3 !important;
+}
+
+.auth-container a {
+    display: block;
+    margin-top: 10px;
+    color: #22525f;
+    text-decoration: none;
+}
+
+.auth-container a:hover {
+    text-decoration: underline;
+}

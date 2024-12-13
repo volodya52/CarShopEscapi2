@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CarShopEscapi</title>
+  <link rel="stylesheet" href="styles2new.css">
+</head>
+<body>
+  <div class="reg-container">
+    <h2>Регистрация</h2>
+    <form>
+      <div class="form-row">
+        <input type="text" placeholder="Имя" required>
+        <input type="text" placeholder="Фамилия" required>
+      </div>
+      <div class="form-row">
+        <input type="date" required>
+      </div>
+      <input type="email" placeholder="Почта" required>
+      <input type="text" placeholder="Логин" required>
+      <input type="password" placeholder="Пароль" required>
+      <button type="submit">Сохранить</button>
+      <button type="button" id="button">Назад</button>
+    </form>
+  </div>
+  <script>
+        document.getElementById('button').addEventListener('click', function() {
+            window.location.href = 'autorisation.html';
+        });
+  </script>
+</body>
+</html>
+
+

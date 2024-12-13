@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarShopEscapi</title>
+    <link rel="stylesheet" href="styles3.css">
+    <style>
+        .search-container {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .results-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+        table {
+            margin: 0 auto; 
+            width: 80%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <label for="search">Введите параметр поиска:</label>
+        <input type="text" id="search" name="search">
+        <button type="button" onclick="performSearch()">Поиск</button>
+    </div>
+    <div id="results" class="results-container"></div>
+
+    <script>
+        function performSearch() {
+            var searchQuery = document.getElementById('search').value;
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'search.php', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    document.getElementById('results').innerHTML = xhr.responseText;
+                }
+            };
+            xhr.send('search=' + encodeURIComponent(searchQuery));
+        }
+    </script>
+</body>
+</html>
+
+
